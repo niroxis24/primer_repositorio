@@ -1,0 +1,329 @@
+:root{
+    --pink: #e84393; /*crear variable para color*/
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*tamaño de cajas en cajas, o sea, todas del mismo tamaño*/
+    outline: none; /*al dar click o mantener el mouse encima de algun enlace no mostrara ninguna animacion*/
+    border: none;
+    text-decoration: none; /*quita toda la decoracion de los textos*/
+    text-transform: capitalize;
+    transition: .2s linear;
+    text-transform: lowercase; /*el comienzo de cada letra comienza con mayucula, esto lo corrige para que solo sea la primera*/
+
+}
+
+html{
+    font-size: 62.5%; /*tamaño de fuente*/
+    scroll-behavior: smooth; /*para live server ayuda a que el cambio sea algo mas suave, se logra evr cada vez que se actualiza la pagina*/
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background-color: #fff;
+    padding: 1.5rem;
+    display: flex; /*se desplaza de manera horizontal el header y con ello el contenido dentro del mismo*/
+    align-items: center;/*centra el contenido para no verse de esquina a esquina*/
+    z-index: 1000; /*se pone por encima de la pagina en todo momento y sin despegarse de la pantalla */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0, .1); /*sombras*/
+    justify-content: space-between; /*da un espacaido entre ellas y el contenedor*/
+}
+
+header .logo{
+    font-size: 4rem;
+    color: #333;
+    font-weight: bolder;/*darle un tono de grosor al texto*/
+}
+
+header .logo span{
+    color: var(--pink); /*llamamos la variable del color*/
+}
+
+header .navbar a{
+    font-size: 2rem;
+    padding: 0 1.5rem;/*se llena el contenido dentro del div*/
+    color: #666;
+}
+
+header .navbar a:hover{ /*creamos una animacion*/
+    color: var(--pink);
+}
+
+header .icons a img{
+    font-size: 1.5rem;
+    color: #333;
+    margin-left: 2rem;/*dar un espaciado a la izquierda por fuera el contenedor*/
+
+}
+
+header .icons a img:hover{
+    transform: scale(1.5); /*tansforma la imagen ara verse mas grande a la escala deseada */
+    transition: 0.8s; /*le da una transicion al movimiento*/
+    color: var(--pink);
+}
+
+
+
+
+section{
+    padding: 2rem 9%;
+}
+
+.home{
+    display: flex;/*meuve todo el home horizontalmente*/
+    align-items: center; /*centra los items dentro del contenedor */
+    min-height: 100vh;/*da una cantidad minima del contenido del taaño de la imagen*/
+    background: url(img/macarons.jpg) no-repeat;
+    background-size: cover;/*adactable a la pantalla de ancho y largo*/
+    background-position: center;
+}
+
+.home .contenedor{
+    max-width: 50rem;
+}
+
+.home .contenedor h3{
+    font-size: 6rem;
+    color: #333;
+}
+
+.home .contenedor span{
+    font-size: 3.5rem;
+    color: var(--pink);
+    padding: 1rem 0 ;
+    line-height: 1.5; /*se anchara a conconde al texto, line-height es para calcular el contenedor segun el texto*/
+                      /*y el 1.5 es para darle una sumatoria pequeña al texto para verse un poco mas grander segun sea la fuente principal*/
+}
+
+.home .contenedor p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+    line-height: 1.5; /*se anchara a conconde al texto, line-height es para calcular el contenedor segun el texto*/
+                        /*y el 1.5 es para darle una sumatoria pequeña al texto para verse un poco mas grander segun sea la fuente principal*/
+}
+
+ .btn{
+   display: inline-block; /*se desplaza de manera en linea (horizontal) y en bloque (tosa con el mismo tamaño que la otra alvergando el ancho de la pantalla)*/
+   margin-top: 1rem;
+   border-radius: 5rem;
+   background: #333;
+   color: #fff;
+   padding: .9rem 3.5rem;
+   cursor: pointer; /*animacion al mouse cuando este apoyado al contenido*/
+   font-size: 1.7rem;
+}
+
+.btn:hover{
+    background-color: var(--pink);
+}
+
+
+
+.sobre .titulo{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background-color: rgba(255, 51, 153, .05);
+}
+
+.sobre .titulo span{
+    color: var(--pink);
+}
+
+.sobre .row{
+    display: flex;
+    align-items: center;
+    gap: 2rem; /*un espaciado tanto arriba como abajo,esto va para todos lados (arriba, abajo. derecha, izquierda) */
+    padding: 2rem 0;
+    flex-wrap: wrap; /*caundo la pnatalla se haga mas pequeña los contenedores se pondran debajo del uno y del otro*/
+    padding-bottom: 3rem;
+}
+
+.sobre .row .videopresent{
+    flex: 1 1 40rem; /*ayuda a que el "display: flex;" se pueda poner el columnas en cuanto los items se pongan horizontalmente*/
+    position: relative;
+}
+
+.sobre .row .videopresent video{
+    width: 90%;
+    border: 1.5rem solid #fff; /*lo sbordes tendran una linea de 1 rem y sea visible para el usuario*/
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+.sobre .row .videopresent h3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 3rem;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: #fff;
+    text-align: center;
+
+    mix-blend-mode: screen; /*ayuda a darle la transparencia al texto*/
+}
+
+.sobre .row .content{
+    flex: 1 1 40rem;/*ayuda a que el "display: flex;" se pueda poner el columnas en cuanto los items se pongan horizontalmente*/
+}
+
+.sobre .row .content h3{
+    font-size: 3rem;
+    color: #333;  
+}
+
+.sobre .row .content p{
+    font-size: 1.5rem;
+    color: #999; 
+    padding: .5rem 0; 
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+
+
+.iconos-contenedor{
+    background-color: #eee;
+    display: flex;
+    flex-wrap: wrap;
+    page-break-inside: 1.5rem; /*esto llega a dividir el texto si en tal caso de que el testo sea mas grande que el mismo contenedor*/
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.iconos-contenedor .icons{
+    background-color: #fff;
+    border: 1rem solid rgba(0,0,0, .1);
+    display: flex;
+    flex: 1 1 25rem;
+    padding: 2rem;
+    align-items: center;
+} 
+
+.iconos-contenedor .icons img{
+    height: 5rem;
+    margin-right: 2rem;
+}
+
+.iconos-contenedor .icons h3{
+    color: #333;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+}
+
+.iconos-contenedor .icons span{
+    color: #999;
+    font-size: 1.3rem;
+}
+
+
+
+/*
+.comentarios{   
+}*/
+
+.comentarios .titulo{
+    text-align: center;
+    margin: 2rem 0;
+    background-color: rgb(255, 51, 153, .1);
+    padding: 2rem;
+    font-size: 4rem;
+}
+
+.comentarios .titulo span{
+    color: var(--pink);
+}
+
+.comentarios .box-contenedor{
+    
+    display: flex;
+    gap: 12rem;
+    padding: 3rem 0;
+    padding-bottom: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.comentarios .box-contenedor .box{
+    border-radius: 1.2rem;
+    box-shadow: 0 0.8rem 4rem rgba(0,0,0, .2);
+    padding: 1.5rem 3rem;
+    flex: 1 1 40rem; /*ayuda a corregir el problema del gap para que el 1 y 1 sea de 2 columnas*/
+}
+
+.comentarios .box-contenedor .box .comentarios h3{
+    padding-top: 3rem;
+    font-size: 3rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.comentarios .box-contenedor .box .comentarios p{
+    font-size: 1.6rem;
+    columns: #333;
+
+}
+
+.comentarios .box-contenedor .box .user{
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+.comentarios .box-contenedor .box .user img{
+    height: 8rem;
+    width: 8rem;
+    border-radius: 50%;
+    object-fit: cover; /*ayuda a que el video como el git se ponga conforme y tapando todo el contenedor gracias a cover*/
+    margin-right: 2rem;
+}
+
+.comentarios .box-contenedor .box .user p{
+    font-size: 1.2rem;
+    color: #333;
+}
+
+
+
+.footer .box-container{
+    padding: 0 10rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    padding: 1rem 0rem 4rem 5rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+    color: var(--pink);
+    font-size: 2.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a{
+    display: block;
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.footer .box-container .box a:hover{
+    color: var(--pink);
+    text-decoration: underline;
+}
